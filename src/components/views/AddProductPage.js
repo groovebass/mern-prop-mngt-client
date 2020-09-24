@@ -98,7 +98,7 @@ function AddProductPage(props) {
             rentOrBuy: RentOrBuyValue
         }
 
-        Axios.post('/api/product/uploadProduct', variables)
+        Axios.post('https://hidden-mountain-88175.herokuapp.com/product/uploadProduct', variables)
             .then(response => {
                 if (response.data.success) {
                     alert('Product Successfully Uploaded')

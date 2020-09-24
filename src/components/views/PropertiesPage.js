@@ -36,7 +36,7 @@ function PropertiesPage() {
     })
 
     const getProducts = useCallback((variables) => {
-        Axios.post('/api/product/getProducts', variables)
+        Axios.post('https://hidden-mountain-88175.herokuapp.com/product/getProducts', variables)
             .then(response => {
                 if (response.data.success) {
                     if (variables.loadMore) {
