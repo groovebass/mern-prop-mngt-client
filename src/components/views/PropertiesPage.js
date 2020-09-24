@@ -22,7 +22,7 @@ function PropertiesPage() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(8)
+    const [Limit] = useState(8)
     const [PostSize, setPostSize] = useState()
     const [SearchTerms, setSearchTerms] = useState("")
 
@@ -35,18 +35,7 @@ function PropertiesPage() {
         floor: [],
     })
 
-    useEffect(() => {
-
-        const variables = {
-            skip: Skip,
-            limit: Limit,
-        }
-
-        getProducts(variables)
-
-    }, [])
-
-    const getProducts = (variables) => {
+    const getProducts = useCallback((variables) => {
         Axios.post('/api/product/getProducts', variables)
             .then(response => {
                 if (response.data.success) {
@@ -60,7 +49,18 @@ function PropertiesPage() {
                     alert('Failed to fectch product datas')
                 }
             })
-    }
+    }, [Products]);
+
+    useEffect(() => {
+
+        const variables = {
+            skip: Skip,
+            limit: Limit,
+        }
+
+        getProducts(variables)
+
+    }, [Limit,Skip,getProducts]);
 
     const onLoadMore = () => {
         let skip = Skip + Limit;

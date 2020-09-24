@@ -3,7 +3,7 @@ import {Button, Drawer, Menu} from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import RightMenu from './RightMenu';
-const SubMenu = Menu.SubMenu;
+
 
 
 

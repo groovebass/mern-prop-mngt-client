@@ -15,7 +15,7 @@ function DetailProductPage(props) {
                 console.log(response.data);
             })
 
-    }, [])
+    }, [productId])
 
     
 

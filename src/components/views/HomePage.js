@@ -6,8 +6,10 @@ import { HeartOutlined, SmileOutlined } from '@ant-design/icons';;
 
 
 function HomePage() {
+
+    const Himage = "/images/cape.jpg"
     return (
-        <div style={{backgroundImage: "url( " +"/images/cape.jpg" + ") ", backgroundSize: 'cover'}} >
+        <div style={{backgroundImage: `url(${Himage})` , backgroundSize: 'cover'}} >
             
             <div style={{ width: '75%', margin: '2rem auto' }}> 
             <h1 style={{ textAlign: 'center', color: '#fff'}}> Welcome to Demawo Properties </h1>
