@@ -36,7 +36,7 @@ function PropertiesPage() {
     })
 
     const getProducts = useCallback((variables) => {
-        Axios.post('https://hidden-mountain-88175.herokuapp.com/product/getProducts', variables)
+        Axios.post('https://hidden-mountain-88175.herokuapp.com/api/product/getProducts', variables)
             .then(response => {
                 if (response.data.success) {
                     if (variables.loadMore) {
@@ -214,14 +214,6 @@ function PropertiesPage() {
                 </Col>
             </Row>
             
-
-            
-            
-
-                
-            
-
-
             {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
                     <h2>No post yet...</h2>

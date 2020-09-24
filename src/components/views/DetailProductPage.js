@@ -9,7 +9,7 @@ function DetailProductPage(props) {
     const [Product, setProduct] = useState([])
 
     useEffect(() => {
-        Axios.get(`https://hidden-mountain-88175.herokuapp.com/product/products_by_id?id=${productId}&type=single`)
+        Axios.get(`https://hidden-mountain-88175.herokuapp.com/api/product/products_by_id?id=${productId}&type=single`)
             .then(response => {
                 setProduct(response.data[0])
                 console.log(response.data);

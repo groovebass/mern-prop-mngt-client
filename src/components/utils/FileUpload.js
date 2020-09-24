@@ -17,7 +17,7 @@ function FileUpload(props) {
         }
         formData.append("file", files[0])
         //save the Image we chose inside the Node Server 
-        Axios.post('/api/product/uploadImage', formData, config)
+        Axios.post('https://hidden-mountain-88175.herokuapp.com/api/product/uploadImage', formData, config)
             .then(response => {
                 if (response.data.success) {
 
@@ -68,7 +68,7 @@ function FileUpload(props) {
 
                 {Images.map((image, index) => (
                     <div onClick={() => onDelete(image)}>
-                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`http://localhost:5000/${image}`} alt={`productImg-${index}`} />
+                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`https://hidden-mountain-88175.herokuapp.com/${image}`} alt={`productImg-${index}`} />
                     </div>
                 ))}
 

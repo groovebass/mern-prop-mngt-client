@@ -86,7 +86,7 @@ function ManageProducts(props) {
         async function updateProduct() {
             
             try {
-                await Axios.put(`https://hidden-mountain-88175.herokuapp.com/product/${id}`);
+                await Axios.put(`https://hidden-mountain-88175.herokuapp.com/api/product/${id}`);
                 setMessage("The product was updated successfully!");
                 props.history.push('/manage')
             } catch (error) {
@@ -99,7 +99,7 @@ function ManageProducts(props) {
    
     
     const deleteHandler = ( ) => {
-        Axios.delete(`https://hidden-mountain-88175.herokuapp.com/product/${id}`)
+        Axios.delete(`https://hidden-mountain-88175.herokuapp.com/api/product/${id}`)
         .then (response => {
             console.log(response.data);
             props.history.push('/manage')
@@ -119,7 +119,7 @@ function ManageProducts(props) {
 
 
    const listProducts = () => {
-       Axios.get('https://hidden-mountain-88175.herokuapp.com/product/listProducts')
+       Axios.get('https://hidden-mountain-88175.herokuapp.com/api/product/listProducts')
            .then(response => {
                if (response.data.success) {
                      setProducts(response.data.products)
